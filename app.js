@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const _ = require("lodash");
+const PORT = process.env.PORT || 3000; // port for listening
 
 app.use(bodyParser.urlencoded({ extended: true })); // to parse incoming requests
 app.use(express.static('public')); // for the css file
@@ -154,11 +155,11 @@ app.get("/:customListName", (req, res) => {
 });
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-    port = 3000;
-}
+// let port = process.env.PORT;
+// if (port == null || port == "") {
+//     port = 3000;
+// }
 
-app.listen(port, () => {
-    console.log("Server started on port 3000");
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
 });
