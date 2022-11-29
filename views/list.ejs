@@ -1,0 +1,36 @@
+<!-- base template to create all the to do list -->
+<!-- EJS-Embedded Javascript : inside <%=   %> -->
+
+    <!-- EJS code tags refer to  ejs.co for conditionals and assignments-->
+<%-  include("header"); -%> 
+    <div class="navbar">
+        <a href="/home">Home Todo</a>
+        <a href="/work">Work Todo</a>
+        <a href="/about">About</a>
+    </div>
+    <div class="box" id="heading">
+        <h2><%= listTitle %> ToDo </h2>
+    </div>
+    <div class="box">
+            <!-- loop through the returned item list from server -->
+            <% newItemsList.forEach((item) => { %>
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox" value="<%=item._id%> " onchange="this.form.submit()">
+                        <p><%= item.name %> </p> <!--.name becz we are returning the whole object from find method in app.js-->
+                    </div>
+                    <!-- this input tag to handle custom lists deletion -->
+                    <input type="hidden" name="listName" value="<%= listTitle %> "></input>
+                </form>
+            <% }) %>
+           
+            <form action="/" method="post">
+                <input type="text" name="newTodo" placeholder="Add New" autocomplete="off" required oninvalid="this.setCustomValidity('Please Enter valid Item')" onkeyup="setCustomValidity('')">
+                <button type="submit" name="list" value="<%= listTitle %>">+</button> <!--listTitle to diff between todo list page and worklist page-->
+            </form>
+    </div>
+
+    <%- include("footer"); -%> 
+
+
+

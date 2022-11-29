@@ -1,0 +1,98 @@
+html{
+    background-color: #E4e9fd;
+    background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #E4e9fd 50%);
+    min-height: 1000px;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+h1,h2{
+    color: #fff;
+    padding: 10px;
+}
+
+.box{
+    max-width: 400px;
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    background-color: #f1f1f1;
+}
+
+#heading{
+    background-color: #a683e3;
+    text-align: center;
+}
+
+.item{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #e1d5f7;
+}
+
+.item:last-child{
+    border-bottom: 0;
+}
+
+input:checked+p{ /* + sign selects all the elements at the end of it and placed immediately after the specified selector*/
+    text-decoration: line-through;
+    text-decoration-color: #a683e3;
+}
+
+input[type="checkbox"] {
+    margin: 15px;
+}
+
+p{
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #00204a;
+}
+
+form.item{
+    text-align: center;
+    margin-left: 20px;
+}
+
+button{
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #a683e3;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+}
+
+input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 313px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #a683e3;
+}
+
+::placeholder { /* :: psuedo sign targets an attribute name*/
+    color: rgb(202, 199, 199);
+    opacity: 1;
+}
+
+footer {
+    color: #fff;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+}
